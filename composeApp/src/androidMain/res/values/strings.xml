@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Compute</string>
+    <string name="clearButtonMark">C</string>
 </resources>

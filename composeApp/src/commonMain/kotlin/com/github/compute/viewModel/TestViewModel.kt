@@ -1,6 +1,6 @@
 package com.github.compute.viewModel
 
-// In commonMain/kotlin/com/yourpackage/common/CalculatorViewModel.kt
+// In commonMain/kotlin/com/yourpackage/common/CalculationViewModel.kt
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
