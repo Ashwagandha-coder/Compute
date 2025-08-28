@@ -1,13 +1,11 @@
 package com.github.compute.ui
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import compute.composeapp.generated.resources.Backspace
 import compute.composeapp.generated.resources.Res
@@ -23,8 +21,8 @@ fun HistoryIcon(onClick: () -> Unit, modifier: Modifier = Modifier.width(24.dp).
     IconButton(onClick = onClick, modifier = modifier) {
         Icon(
             painter = painterResource(Res.drawable.history_icon),
-            contentDescription = "",
-            modifier = modifier.background(color = Color.White)
+            contentDescription = "History Icon",
+            modifier = modifier
         )
     }
 }
@@ -35,8 +33,8 @@ fun RulerIcon(onClick: () -> Unit, modifier: Modifier = Modifier.width(24.dp).he
     IconButton(onClick = onClick, modifier = modifier) {
         Icon(
             painter = painterResource(Res.drawable.Ruler),
-            contentDescription = "",
-            modifier = Modifier.width(24.dp).height(24.dp).background(color = Color.White)
+            contentDescription = "Ruler Icon",
+            modifier = modifier
         )
     }
 }
@@ -47,8 +45,8 @@ fun RootIcon(onClick: () -> Unit, modifier: Modifier = Modifier.width(24.dp).hei
     IconButton(onClick = onClick, modifier = modifier) {
         Icon(
             painter = painterResource(Res.drawable.Root),
-            contentDescription = "",
-            modifier = Modifier.width(24.dp).height(24.dp).background(color = Color.White)
+            contentDescription = "Root Icon",
+            modifier = modifier
         )
     }
 }
@@ -59,8 +57,8 @@ fun BackSpaceIcon(onClick: () -> Unit, modifier: Modifier = Modifier.width(24.dp
     IconButton(onClick = onClick, modifier = modifier) {
         Icon(
             painter = painterResource(Res.drawable.Backspace),
-            contentDescription = "",
-            modifier = Modifier.width(24.dp).height(24.dp).background(color = Color.White)
+            contentDescription = "BackSpace Icon",
+            modifier = modifier
         )
     }
 }

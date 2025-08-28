@@ -59,7 +59,7 @@ fun CalculationScreen(viewModel: CalculationViewModel) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(vertical = 19.dp)
+                .padding()
                 .statusBarsPadding(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -76,13 +76,13 @@ fun CalculationScreen(viewModel: CalculationViewModel) {
 
 @Composable
 fun InputFieldDigit(viewModel: CalculationViewModel) {
-
     Text(
         text = "2 + 7",
         fontSize = 48.sp,
+        fontFamily = getRegularFontFamily(),
         color = inputFieldColor,
         textAlign = TextAlign.End,
-        modifier = Modifier.fillMaxWidth().padding()
+        modifier = Modifier.fillMaxWidth().padding(end = 32.dp)
     )
 }
 
@@ -95,7 +95,7 @@ fun ResultText(viewModel: CalculationViewModel) {
         color = resultTextColor,
         textAlign = TextAlign.End,
         maxLines = 1,
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth().padding(end = 32.dp)
     )
 }
 
@@ -104,13 +104,15 @@ fun PanelRowIcons() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 15.dp), // Added some vertical padding for better spacing
+            .padding(top = 15.dp)
+            .padding(end = 30.dp), // Added some vertical padding for better spacing
         horizontalArrangement = Arrangement.SpaceBetween, // Pushes Backspace to the end
         verticalAlignment = Alignment.CenterVertically
     ) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(25.dp),
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(start = 21.dp)
         ) {
             HistoryIcon({})
             RulerIcon({})
@@ -128,7 +130,7 @@ fun DividerLine() {
     Divider(
         thickness = 1.dp,
         color = dividerColor,
-        modifier = Modifier.padding(top = 20.dp)
+        modifier = Modifier.padding(top = 20.dp).padding(horizontal = 19.dp)
     )
 }
 
