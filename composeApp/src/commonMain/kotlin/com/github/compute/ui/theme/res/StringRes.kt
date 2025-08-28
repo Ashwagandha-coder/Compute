@@ -1,4 +1,4 @@
-package com.github.compute.res
+package com.github.compute.ui.theme.res
 
 object StringRes {
     const val clearButtonMark = "C"

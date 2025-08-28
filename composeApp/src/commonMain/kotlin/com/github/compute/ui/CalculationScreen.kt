@@ -22,20 +22,19 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.github.compute.res.StringRes
-import com.github.compute.res.backgroundColorDigitButton
-import com.github.compute.res.clearButtonColor
-import com.github.compute.res.digitButtonColor
-import com.github.compute.res.dividerColor
-import com.github.compute.res.inputFieldColor
-import com.github.compute.res.operationsButtonColor
-import com.github.compute.res.resultButtonBackgroundColor
-import com.github.compute.res.resultTextColor
+import com.github.compute.ui.theme.getRegularFontFamily
+import com.github.compute.ui.theme.res.StringRes
+import com.github.compute.ui.theme.res.backgroundColorDigitButton
+import com.github.compute.ui.theme.res.clearButtonColor
+import com.github.compute.ui.theme.res.digitButtonColor
+import com.github.compute.ui.theme.res.dividerColor
+import com.github.compute.ui.theme.res.inputFieldColor
+import com.github.compute.ui.theme.res.operationsButtonColor
+import com.github.compute.ui.theme.res.resultButtonBackgroundColor
+import com.github.compute.ui.theme.res.resultTextColor
 import com.github.compute.viewModel.CalculationViewModel
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -157,11 +156,8 @@ fun FirstRowButtons(buttonModifier: Modifier) {
             contentColor = Color.White
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = StringRes.clearButtonMark,
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = StringRes.clearButtonMark
         )
     }
     Button(
@@ -170,11 +166,8 @@ fun FirstRowButtons(buttonModifier: Modifier) {
             contentColor = operationsButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = StringRes.parenthesesButtonLabel,
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = StringRes.parenthesesButtonLabel
         )
     }
     Button(
@@ -183,11 +176,8 @@ fun FirstRowButtons(buttonModifier: Modifier) {
             contentColor = operationsButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = StringRes.percentageButtonLabel,
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = StringRes.percentageButtonLabel
         )
     }
     Button(
@@ -196,11 +186,8 @@ fun FirstRowButtons(buttonModifier: Modifier) {
             contentColor = operationsButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = StringRes.divideButtonLabel,
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = StringRes.divideButtonLabel
         )
     }
 }
@@ -214,11 +201,8 @@ fun SecondRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = "7",
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = "7"
         )
     }
     Button(
@@ -227,11 +211,8 @@ fun SecondRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = "8",
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = "8"
         )
     }
     Button(
@@ -240,11 +221,8 @@ fun SecondRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = "9",
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = "9"
         )
     }
     Button(
@@ -253,11 +231,8 @@ fun SecondRowButtons(buttonModifier: Modifier) {
             contentColor = operationsButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = StringRes.multipleButtonLabel,
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = StringRes.multipleButtonLabel
         )
     }
 }
@@ -270,11 +245,8 @@ fun ThirdRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = "4",
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = "4"
         )
     }
     Button(
@@ -283,11 +255,8 @@ fun ThirdRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = "5",
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = "5"
         )
     }
     Button(
@@ -296,11 +265,8 @@ fun ThirdRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = "6",
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = "6"
         )
     }
     Button(
@@ -309,11 +275,8 @@ fun ThirdRowButtons(buttonModifier: Modifier) {
             contentColor = operationsButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = StringRes.subtrackButtonLabel,
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = StringRes.subtrackButtonLabel
         )
     }
 }
@@ -326,11 +289,8 @@ fun FoursRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = "1",
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = "1"
         )
     }
     Button(
@@ -339,11 +299,8 @@ fun FoursRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = "2",
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = "2"
         )
     }
     Button(
@@ -352,11 +309,8 @@ fun FoursRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = "3",
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = "3"
         )
     }
     Button(
@@ -365,11 +319,8 @@ fun FoursRowButtons(buttonModifier: Modifier) {
             contentColor = operationsButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = StringRes.addingButtonLabel,
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = StringRes.addingButtonLabel
         )
     }
 }
@@ -382,11 +333,8 @@ fun FifthRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = StringRes.addSubtrackButtonLabel,
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = StringRes.addSubtrackButtonLabel
         )
     }
     Button(
@@ -395,11 +343,8 @@ fun FifthRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = "0",
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = "0"
         )
     }
     Button(
@@ -408,11 +353,8 @@ fun FifthRowButtons(buttonModifier: Modifier) {
             contentColor = digitButtonColor
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = StringRes.dotButtonLabel,
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = StringRes.dotButtonLabel
         )
     }
     Button(
@@ -421,13 +363,19 @@ fun FifthRowButtons(buttonModifier: Modifier) {
             contentColor = Color.White
         ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
     ) {
-        Text(
-            text = StringRes.equalsButtonLabel,
-            fontSize = 36.sp,
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal
+        TextWrapper(
+            text = StringRes.equalsButtonLabel
         )
     }
+}
+
+@Composable
+fun TextWrapper(text: String) {
+    Text(
+        text = text,
+        fontSize = 36.sp,
+        fontFamily = getRegularFontFamily()
+    )
 }
 
 

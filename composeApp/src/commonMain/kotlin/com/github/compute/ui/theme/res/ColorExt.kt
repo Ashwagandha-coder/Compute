@@ -1,4 +1,4 @@
-package com.github.compute.res
+package com.github.compute.ui.theme.res
 
 import androidx.compose.ui.graphics.Color
 
