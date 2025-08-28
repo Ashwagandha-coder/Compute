@@ -36,6 +36,12 @@ import com.github.compute.ui.theme.res.operationsButtonColor
 import com.github.compute.ui.theme.res.resultButtonBackgroundColor
 import com.github.compute.ui.theme.res.resultTextColor
 import com.github.compute.viewModel.CalculationViewModel
+import compute.composeapp.generated.resources.Res
+import compute.composeapp.generated.resources.divider
+import compute.composeapp.generated.resources.multiple
+import compute.composeapp.generated.resources.parentheses
+import compute.composeapp.generated.resources.percentage
+import compute.composeapp.generated.resources.plus_minus
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 
@@ -58,7 +64,8 @@ fun CalculationScreen(viewModel: CalculationViewModel) {
         ) {
             InputFieldDigit(viewModel)
             ResultText(viewModel)
-            DividerPad()
+            HistoryIcon()
+            DividerLine()
             CalculationPad(viewModel)
         }
     }
@@ -92,9 +99,9 @@ fun ResultText(viewModel: CalculationViewModel) {
 
 @Preview
 @Composable
-fun DividerPad() {
+fun DividerLine() {
     Divider(
-        thickness = 2.dp,
+        thickness = 1.dp,
         color = dividerColor,
         modifier = Modifier.padding(bottom = 25.dp)
     )
@@ -160,36 +167,25 @@ fun FirstRowButtons(buttonModifier: Modifier) {
             text = StringRes.clearButtonMark
         )
     }
-    Button(
-        colors = ButtonDefaults.buttonColors(
-            containerColor = backgroundColorDigitButton,
-            contentColor = operationsButtonColor
-        ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
-    ) {
-        TextWrapper(
-            text = StringRes.parenthesesButtonLabel
-        )
-    }
-    Button(
-        colors = ButtonDefaults.buttonColors(
-            containerColor = backgroundColorDigitButton,
-            contentColor = operationsButtonColor
-        ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
-    ) {
-        TextWrapper(
-            text = StringRes.percentageButtonLabel
-        )
-    }
-    Button(
-        colors = ButtonDefaults.buttonColors(
-            containerColor = backgroundColorDigitButton,
-            contentColor = operationsButtonColor
-        ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
-    ) {
-        TextWrapper(
-            text = StringRes.divideButtonLabel
-        )
-    }
+    val iconModifier = Modifier.width(20.23.dp).height(29.dp)
+    ImageCalculateButton(
+        iconModifier = iconModifier,
+        buttonModifier = buttonModifier,
+        linkPicture = Res.drawable.parentheses,
+        contentColor = operationsButtonColor
+    )
+    ImageCalculateButton(
+        iconModifier = iconModifier,
+        buttonModifier = buttonModifier,
+        linkPicture = Res.drawable.percentage,
+        contentColor = operationsButtonColor
+    )
+    ImageCalculateButton(
+        buttonModifier = buttonModifier,
+        iconModifier = iconModifier,
+        linkPicture = Res.drawable.divider,
+        contentColor = operationsButtonColor
+    )
 }
 
 
@@ -225,16 +221,12 @@ fun SecondRowButtons(buttonModifier: Modifier) {
             text = "9"
         )
     }
-    Button(
-        colors = ButtonDefaults.buttonColors(
-            containerColor = backgroundColorDigitButton,
-            contentColor = operationsButtonColor
-        ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
-    ) {
-        TextWrapper(
-            text = StringRes.multipleButtonLabel
-        )
-    }
+    ImageCalculateButton(
+        iconModifier = Modifier.width(20.23.dp).height(29.dp),
+        buttonModifier = buttonModifier,
+        linkPicture = Res.drawable.multiple,
+        contentColor = operationsButtonColor
+    )
 }
 
 @Composable
@@ -327,16 +319,13 @@ fun FoursRowButtons(buttonModifier: Modifier) {
 
 @Composable
 fun FifthRowButtons(buttonModifier: Modifier) {
-    Button(
-        colors = ButtonDefaults.buttonColors(
-            containerColor = backgroundColorDigitButton,
-            contentColor = digitButtonColor
-        ), onClick = {}, modifier = buttonModifier, shape = RoundedCornerShape(9.dp)
-    ) {
-        TextWrapper(
-            text = StringRes.addSubtrackButtonLabel
-        )
-    }
+    val iconModifier = Modifier.width(54.dp).height(43.dp)
+    ImageCalculateButton(
+        iconModifier = iconModifier,
+        buttonModifier = buttonModifier,
+        linkPicture = Res.drawable.plus_minus,
+        contentColor = digitButtonColor
+    )
     Button(
         colors = ButtonDefaults.buttonColors(
             containerColor = backgroundColorDigitButton,

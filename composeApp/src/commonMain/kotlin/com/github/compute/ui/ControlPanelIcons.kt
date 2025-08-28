@@ -1,0 +1,29 @@
+package com.github.compute.ui
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Icon
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import compute.composeapp.generated.resources.Res
+import compute.composeapp.generated.resources.history_icon
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
+
+@Preview
+@Composable
+fun HistoryIcon() {
+    Icon(
+        painter = painterResource(Res.drawable.history_icon),
+        contentDescription = "",
+        modifier = Modifier.width(24.dp).height(24.dp).background(color = Color.White)
+    )
+}
+
+@Composable
+fun RulerIcon() {
+
+}
