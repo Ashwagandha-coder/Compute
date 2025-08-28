@@ -4,6 +4,7 @@ package com.github.compute.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -58,28 +59,30 @@ fun CalculationScreen(viewModel: CalculationViewModel) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(vertical = 25.dp, horizontal = 19.dp)
+                .padding(vertical = 19.dp)
                 .statusBarsPadding(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             InputFieldDigit(viewModel)
+            Spacer(modifier = Modifier.height(50.dp))
             ResultText(viewModel)
-            HistoryIcon()
+            PanelRowIcons()
             DividerLine()
             CalculationPad(viewModel)
         }
     }
 }
 
+
 @Composable
 fun InputFieldDigit(viewModel: CalculationViewModel) {
 
     Text(
-        text = "123 + 456",
+        text = "2 + 7",
         fontSize = 48.sp,
         color = inputFieldColor,
         textAlign = TextAlign.End,
-        modifier = Modifier.fillMaxWidth().padding(bottom = 82.dp)
+        modifier = Modifier.fillMaxWidth().padding()
     )
 }
 
@@ -87,13 +90,35 @@ fun InputFieldDigit(viewModel: CalculationViewModel) {
 @Composable
 fun ResultText(viewModel: CalculationViewModel) {
     Text(
-        text = "579",
+        text = "9",
         fontSize = 48.sp,
         color = resultTextColor,
         textAlign = TextAlign.End,
         maxLines = 1,
         modifier = Modifier.fillMaxWidth()
     )
+}
+
+@Composable
+fun PanelRowIcons() {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 15.dp), // Added some vertical padding for better spacing
+        horizontalArrangement = Arrangement.SpaceBetween, // Pushes Backspace to the end
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(25.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            HistoryIcon({})
+            RulerIcon({})
+            RootIcon({})
+        }
+
+        BackSpaceIcon({})
+    }
 }
 
 
@@ -103,7 +128,7 @@ fun DividerLine() {
     Divider(
         thickness = 1.dp,
         color = dividerColor,
-        modifier = Modifier.padding(bottom = 25.dp)
+        modifier = Modifier.padding(top = 20.dp)
     )
 }
 
@@ -122,6 +147,7 @@ fun CalculationPad(
     ) {
 
         Row(
+            modifier = Modifier.padding(top = 25.dp),
             horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
             FirstRowButtons(buttonModifier)
